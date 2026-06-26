@@ -92,8 +92,8 @@ export default function SubscriptionsList({ initialSubs }: { initialSubs: Subscr
         Showing {filtered.length} of {initialSubs.length} subscription{initialSubs.length !== 1 ? 's' : ''}
       </p>
 
-      <div className="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden">
-        <table className="w-full text-sm">
+      <div className="bg-white rounded-xl shadow-sm border border-slate-100 overflow-x-auto">
+        <table className="w-full text-sm min-w-[900px]">
           <thead className="bg-slate-50 border-b border-slate-100">
             <tr>
               <th className="text-left px-4 py-3 text-slate-600 font-semibold">Hotel Name</th>

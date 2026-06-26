@@ -47,14 +47,14 @@ export default async function DashboardPage() {
 
   return (
     <div>
-      <div className="flex items-center justify-between mb-8">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6 sm:mb-8">
         <div>
-          <h1 className="text-2xl font-bold text-slate-900">Dashboard</h1>
+          <h1 className="text-xl sm:text-2xl font-bold text-slate-900">Dashboard</h1>
           <p className="text-slate-500 text-sm mt-1">Overview of all POS subscriptions</p>
         </div>
         <Link
           href="/subscriptions/new"
-          className="bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors"
+          className="bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors text-center"
         >
           + New Subscription
         </Link>
@@ -72,8 +72,8 @@ export default async function DashboardPage() {
       {stats.expiringSoon.length > 0 && (
         <div className="mb-8">
           <h2 className="text-lg font-semibold text-slate-800 mb-3">⚠️ Expiring Within 30 Days</h2>
-          <div className="bg-white rounded-xl shadow-sm border border-amber-200 overflow-hidden">
-            <table className="w-full text-sm">
+          <div className="bg-white rounded-xl shadow-sm border border-amber-200 overflow-x-auto">
+            <table className="w-full text-sm min-w-[480px]">
               <thead className="bg-amber-50">
                 <tr>
                   <th className="text-left px-4 py-3 text-amber-800 font-semibold">Hotel</th>
@@ -106,8 +106,8 @@ export default async function DashboardPage() {
           <h2 className="text-lg font-semibold text-slate-800">Recent Subscriptions</h2>
           <Link href="/subscriptions" className="text-indigo-600 text-sm hover:underline">View all</Link>
         </div>
-        <div className="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden">
-          <table className="w-full text-sm">
+        <div className="bg-white rounded-xl shadow-sm border border-slate-100 overflow-x-auto">
+          <table className="w-full text-sm min-w-[640px]">
             <thead className="bg-slate-50">
               <tr>
                 <th className="text-left px-4 py-3 text-slate-600 font-semibold">Hotel</th>

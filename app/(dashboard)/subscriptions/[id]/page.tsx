@@ -52,9 +52,9 @@ export default async function SubscriptionDetailPage({
       </div>
 
       {/* Header */}
-      <div className="flex items-start justify-between mb-6">
+      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-6">
         <div>
-          <h1 className="text-2xl font-bold text-slate-900">{sub.hotel_name}</h1>
+          <h1 className="text-xl sm:text-2xl font-bold text-slate-900">{sub.hotel_name}</h1>
           <div className="flex items-center gap-3 mt-2 flex-wrap">
             <StatusBadge sub={sub} />
             {daysLeft > 0 && (
@@ -69,18 +69,18 @@ export default async function SubscriptionDetailPage({
         </div>
 
         {/* Quick stats */}
-        <div className="hidden sm:flex gap-4">
-          <div className="text-right">
+        <div className="flex gap-6 sm:gap-4">
+          <div className="sm:text-right">
             <p className="text-xs text-slate-400">Started</p>
             <p className="text-sm font-medium text-slate-700">{formatDate(sub.started_at)}</p>
           </div>
-          <div className="text-right">
+          <div className="sm:text-right">
             <p className="text-xs text-slate-400">Expires</p>
             <p className={`text-sm font-medium ${daysLeft <= 7 ? 'text-red-600' : 'text-slate-700'}`}>
               {formatDate(sub.expires_at)}
             </p>
           </div>
-          <div className="text-right">
+          <div className="sm:text-right">
             <p className="text-xs text-slate-400">Logins</p>
             <p className="text-sm font-medium text-slate-700">{logins.length}</p>
           </div>
